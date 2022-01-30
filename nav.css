@@ -66,8 +66,4 @@ ul ul li a {
     display: block;
 }
 
-  @media screen and (max-width: 480px) {
-      .navbar {
-          display: none;
-      }
-  }
+  
