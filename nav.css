@@ -4,20 +4,22 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 /* styling the logo */
 img{
     width: 40px;
     height: 40px;
-    margin: 5px;;
+    
 }
 /* styling the navbar */
 .navbar{
     background-color: lightgrey;
     height: 10vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: relative;
+    padding: 0px 30px;
 
 }
 /* styling the navbar list */
@@ -26,6 +28,7 @@ img{
     justify-content: space-around;
     align-items: center;
     list-style: none;
+
 }
 /* styling the navbar links */
 .navbar a {
@@ -45,36 +48,39 @@ img{
 }
 /* moving the hamburger tag to the right top corner */
 label{
-    position:absolute;
-    top:7px;
-    right:3px;
-    display: none;
-
+    position: absolute;
+    top: 26px; 
+    right:15px;
+    display:none;
 }
-/* creating opening hambuger tag */
 span{
-    width: 15px;
-    height: 2px;
-    background-color: blue;
     display: block;
-    margin: 5px;
+    width: 16px;
+    height: 2px;
+    background-color: red;
+    margin: 3px;
+   
 }
-/*  creating the mobile view */
-@media only screen and (max-width:700px) {
 
-    img{
-        position:absolute ;
-        top:0px;
-        left:2px;
+/*  creatin the mobile view */
+@media only screen and (max-width:700px) {
+    body{
+        overflow: hidden;
     }
     label{
-        display: block;
-        cursor: pointer;
+        display:block;
     }
-    
+  
+   .navbar{
+       padding: 0%;
+   }
+   img{
+       position: absolute;
+       left: 15px;
+   }
+
     .navbar ul{
-        position: fixed;
-        position: right;
+        position: absolute;
         height: 92vh;
         top:8.5vh;
         background-color: lightgrey;
@@ -91,26 +97,29 @@ span{
     #toggle:checked + label + ul{
         display: flex;
     }
-    /* creating the closing hamburger */
+   
+    
+     /*creating the closing hamburger*/
     #toggle:checked + label span:nth-child(1){
-        background-color:black;
+        background-color:yellowgreen;
         transform: rotate(130deg);
         position: absolute;
-     
+    
      }
      
      #toggle:checked + label span:nth-child(2){
         background-color: black; 
         transform: rotate(45deg);
-
     
+
      }
      #toggle:checked + label span:nth-child(3){
          display: none;
      
      }
+     
      #toggle:checked + label + ul {
-         transform: translate(0%);
+         transform: translateX(0%);
      }
      
 }
