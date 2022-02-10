@@ -101,7 +101,7 @@ span{
     
      /*creating the closing hamburger*/
     #toggle:checked + label span:nth-child(1){
-        background-color:yellowgreen;
+        background-color:black;
         transform: rotate(130deg);
         position: absolute;
     
