@@ -1,1 +1,1 @@
-# how to create a responsive navigation bar having a opening and closing tag with animination effect.
+# how to create a responsive navigation and footer bar having a opening and closing harmburger bar with transition effect.
