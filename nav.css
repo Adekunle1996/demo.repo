@@ -4,6 +4,9 @@
     margin: 0px;
     box-sizing: border-box;
 }
+body{
+    background-color: lightgray;
+}
 /* styling the logo */
 .logo{
     text-transform: uppercase;
@@ -95,6 +98,22 @@ label .togglebar{
 #toggle{
     display:none;
 }
+.flex_container{
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+    img{
+        width:220px;
+        height: 220px;
+    }
+    img:hover{
+        opacity:0.5;
+        width: 225px;
+        height: 225px;
+    }
 /* styling the footer for the desktop view */
 footer{
     background-color: blue;
@@ -192,10 +211,13 @@ nav .list_container{
     #toggle:checked + label .togglebar:nth-child(3){
         display:none;
     }
-    .main_content{
-        margin:55% 0%;
-        position: relative;
-    } 
+    .flex_container{
+        display:flex;
+        flex-direction:column;
+        margin:55.5% 0%;
+        position: sticky;
+        top:55vh;
+    }
     footer{
         position: relative;
         bottom:0px;
