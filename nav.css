@@ -1,126 +1,103 @@
 /* removing all default styling */
 *{
-    padding:0px;
-    margin: 0px;
+    padding: 0%;
+    margin: 0%;
     box-sizing: border-box;
+    letter-spacing: 2px;
 }
-body{
-    background-color: lightgray;
+/* navbar */
+nav{
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    
 }
 /* styling the logo */
 .logo{
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color:blue;
-}
-/* styling the nav bar */
-nav{
-    min-height: 10vh;
-    background-color: lightgray;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
-/* styling the order list */
-nav .list_container{
-     list-style: none;
-     display: flex;
-     width:50%;
-     justify-content: space-around;
-     
-}
-/* styling the nav links item */
-nav  .list_container a{
+    color: black;
     text-decoration: none;
-    color:red;
-    letter-spacing: 2px;
-    
+    text-transform: uppercase;
 }
-/* effect when you hover the links item */
- nav .list_container li a:hover{
-    background-color: rgb(132, 132, 245);
-    color:yellow;
-}
-/* making the home link active */
-.active{
-    background-color:rgb(161, 161, 236);
-}
-/* making the sub nav relative to it parent */
-nav .list_container li {
-    position:relative;
-}
-/* styling the sub-nav*/
- nav .list_container li ul{
-    position: absolute;
-    opacity: 0;
+/* styling the nav links container */
+nav .nav_container{
     list-style: none;
-    display:flex;
-    flex-direction: column;
-    width: 120px;
-    height: 100px;
-    background-color: lightgray;
-    align-items: center; 
-    transition: 1s ease-in;
-    justify-content: space-around;
-    
+    display: flex;
 }
-/* displaying the sub-nav when you hover the navbar */
-
-nav .list_container li:hover > ul {
-    opacity:1;
-    
+/* making the subnav container relative list links*/
+nav .nav_container li {
+    position: relative;
 }
-nav .list_container li ul li {
-    width:100%;
-    height: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-nav .list_container li ul li:hover {
-    background-color:blue;
-    
-}
- nav .list_container li ul a{
+/* styling the nav links*/
+nav .nav_container li a{
     display: inline-block;
-
+    padding: 24px;
+    color: white;
+    text-decoration: none;
 }
-/* styling the togglebar */
-label .togglebar{
-    width:13px;
+nav .nav_container li a:hover{
+    opacity: 0.7;
+}
+/*styling the subnav container and making it absolutely relative to the list links*/
+nav .nav_container ul{
+    position: absolute;
+    background-color: blue;
+    opacity: 0;
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+/* making the subnav display after it non appearance */
+nav .nav_container li:hover ul{
+    opacity: 1;
+}
+/* allowing the list links to take over the nav links container inorder to have a full width hover effect*/
+nav .nav_container li ul li{
+    width: 100%;
+    height: 100%;
+}
+/* a full width hover effect */
+nav .nav_container li ul li:hover{
+    background-color: lightgray;
+}
+/* styling opening toggle bar */
+.togglebar div{
+    width: 16px;
     height:2px;
-    background-color: black;
-    margin:2px 0px;
+    background-color: red;
+    margin:3px;
     display:none;
 }
+/* making the input element to have non appearance*/
 #toggle{
     display:none;
 }
+/* styling the main content*/
 .flex_container{
     background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
     }
+    /* styling the image */
     img{
-        width:220px;
-        height: 220px;
+        width:215px;
+        height: 215px;
+        transition: 1s ease-in-out;
     }
     img:hover{
         opacity:0.5;
-        width: 225px;
-        height: 225px;
+        transform: scale(1.1);
     }
-/* styling the footer for the desktop view */
+    /* styling the footer for the desktop view */
 footer{
     background-color: blue;
     position: relative;
     bottom:0px;
     width: 100%;
-
 }
 footer .social_media {
     display: flex;
@@ -128,12 +105,11 @@ footer .social_media {
     
 }
 footer .social_media i {
-    padding:15px;
+    padding:25px;
     color:white;
-    opacity:0.5;
 }
 footer .social_media i:hover{
-    opacity:1;
+    opacity:0.7;
 }
 footer .footer_links {
     display: flex;
@@ -142,12 +118,13 @@ footer .footer_links {
 }
 footer .footer_links li a {
     display:inline-block;
-    padding: 15px;
+    padding: 25px;
     text-decoration: none;
-    color:white;
+    color:black;
+    
 }
 footer .footer_links li a:hover {
-    color:black;
+    opacity:0.7;
 }
 footer .copyright{
     display:flex;
@@ -156,112 +133,125 @@ footer .copyright{
 footer .copyright{
     display:flex;
     justify-content:center;
-    padding: 15px;
+    padding: 25px;
     color:black;
 } 
 footer .copyright:hover{
     display:flex;
     justify-content:center;
     padding: 15px;
-    color:white;
+    opacity: 0.7;
 } 
-/* styling the mobile view */
-
-@media screen and (max-width: 700px){
-    body{
-        background-color: lightgray;
-    }
-nav .list_container{
-        position: absolute;
-        top:10vh;
-        height: 50vh; 
-        background-color: lightgray;
-        left:-100%;
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        transition: 1s ease-in;
-    }
-    /* styling logo */
-    .logo, label{
-        margin:0px 15px;
-    }
-    /* displaying the togglebar in the mobile view */
-    label .togglebar{
+@media  screen and (max-width:700px)  {
+    /* displaying opening togglebar inside moblie view */
+    .togglebar div{
         display: block;
+        background-color: black;
     }
     nav{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
     }
-    
-    #toggle:checked ~ .list_container {
-        left:0%;
+    .logo, .togglebar{
+        margin: 0px 15px;
     }
-    /* stlying the closing togglebar */
-    #toggle:checked + label .togglebar:nth-child(1){
-        transform: rotate(130deg);
+    /* styling the nav links container for the mobile view */
+    nav .nav_container{
         position: absolute;
-    }
-    #toggle:checked + label .togglebar:nth-child(2){
-        transform: rotate(49deg);
-
-    }
-    #toggle:checked + label .togglebar:nth-child(3){
-        display:none;
-    }
-    .flex_container{
+        top:10vh;
+        left:-100%;
         display:flex;
-        flex-direction:column;
-        margin:55.5% 0%;
-        position: sticky;
-        top:55vh;
-    }
-    footer{
-        position: relative;
-        bottom:0px;
-        background-color:blue;
-        width: 100%;
-    }
-    footer .social_media {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        
-    }
-    footer .social_media i{
-        color:white;
-        padding: 15px;
-        opacity: 0.5;
-    }
-    footer .social_media i:hover{
-        opacity:1;
-    }
-    footer .footer_links{
-        display:flex;
-        justify-content: center;
-        list-style: none;
-        flex-wrap: wrap;
-
-    }
-    footer .footer_links li a{
-        padding: 15px;
-        color:white;
-        text-decoration: none;
-    }
-    footer .footer_links li a:hover{
-        color:black;    
-    }
-    footer .copyright{
-        display: flex;
-        justify-content: center;
-        margin: 15px;
-        color:white;
-    }
-    footer .copyright:hover{
-        color:black;
-    }
+        flex-direction: column;
+        background-color: blue;
+        transition: 1s ease-in-out;
+        width:35vh;
+        text-align: center;
+    
+}
+/* making the subnav to flow in it normal states and giving it a non appearance effect*/
+nav .nav_container ul{
+    position: relative;
+    top:0px;
+    display:none;
+}
+/* displaying subnav */
+nav .nav_container li:hover > ul{
+    display:block;
+}
+nav .nav_container li{
+    width: 100%;
+    height: 100%;
+}
+nav .nav_container li:hover{
+    background-color: lightgray;
+}
+/* displaying the nav links container from it non appearance */
+#toggle:checked ~ ul{
+    left:0;
 
 }
+ /* stlying the closing togglebar */
+ #toggle:checked + .togglebar div:nth-child(1){
+    transform: rotate(130deg);
+    position: absolute;
+}
+#toggle:checked + .togglebar div:nth-child(2){
+    transform: rotate(49deg);
+}
+#toggle:checked + .togglebar div:nth-child(3){
+    display:none;
+}
+/* styling the main container */
+.flex_container{
+    display:flex;
+    flex-direction:column;
 
+}
+/* styling the footer */
+footer{
+    background-color:blue;
+    width:100%;
+    min-height: 200px;
+    position: fixed;
+}
+footer .social_media {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+footer .social_media i{
+    color:white;
+    padding: 15px;
+    opacity: 0.5;
+}
+footer .social_media i:hover{
+    opacity:1;
+}
+footer .footer_links{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+footer .footer_links li a{
+    padding: 15px;
+    color:white;
+    text-decoration: none;
+}
+footer .footer_links li a:hover{
+    color:black;    
+}
+footer .copyright{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    color:white;
+    flex-wrap: wrap;
+}
+footer .copyright:hover{
+    color:black;
+}
+
+}
